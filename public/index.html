@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Real-Time Chat</title>
+        <link href="/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="lobby" >
+            <h1 class="text">Video Chat</h1>
+            <input id="room" type="text" placeholder="Room name" />
+            <button id="enterRoom">Enter Room</button>
+        </div>
+        <div id="roomDiv" style="display:none" >
+            <video muted id=video></video>
+            <br/>  
+            My Video
+            <div class="btn-group" id="btn-group">
+                <button id="muteButton">Mute</button>
+                <button id="hideButton">Hide Cam</button>
+                <button id=leaveButton>Leave Room</button>
+              </div>
+
+            <br/>
+            <video muted id=peer  ></video>
+            <br/>
+            Incoming Stream
+            
+        </div>
+
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"></script>
+    <script src="/call.js"></script>
+</html>
