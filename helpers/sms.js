@@ -26,24 +26,24 @@ const generateOTP=async(user)=>{
 
     
       // send OTP via SMS and save in user records for varification
-       msg91.sendSMS(args, function(err, response){
+//        msg91.sendSMS(args, function(err, response){
           
-            if (err)
-                throw new Error(err);
+//             if (err)
+//                 throw new Error(err);
 
-            if (response && response.type=="error")
-                throw new Error(response.message);
+//             if (response && response.type=="error")
+//                 throw new Error(response.message);
                 
 
           
-            console.log("sendSMS Response",response);
+//             console.log("sendSMS Response",response);
 
-            user.otp=otp;
-            user.save();
+//             user.otp=otp;
+//             user.save();
 
 
       
-      });
+//       });
 
 };
 
