@@ -19,6 +19,12 @@ const generateOTP=async(user)=>{
       };
 
 
+        console.log("OTP - ",otp);
+
+        user.otp=otp;
+        user.save();
+
+    
       // send OTP via SMS and save in user records for varification
        msg91.sendSMS(args, function(err, response){
           
