@@ -3,7 +3,7 @@ import { IonImg,IonItem,IonLabel,IonInput, IonRow,IonCol,IonIcon} from '@ionic/r
 import appLogo from '../theme/assets/app-logo.svg';
 import security_c from '../theme/assets/security.svg';
 
-import React, {Link, useState } from 'react';
+import React, {Link, memo, useState } from 'react';
 import Home from './Home';
 import {useHistory} from "react-router-dom"; 
 import OTPModal from "../components/OTPModal";
@@ -11,7 +11,7 @@ import OTPModal from "../components/OTPModal";
  
 import './Login.css';
 
-const Login = () => {
+const Login = memo(() => {
 
   const [mobile,setMobile] =useState("");
 
@@ -66,6 +66,6 @@ const Login = () => {
 
      
   );
-};
+}, () => true);
 
 export default Login;

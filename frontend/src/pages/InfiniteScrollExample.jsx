@@ -12,9 +12,9 @@ import { setupIonicReact,
   IonToolbar,
   useIonViewWillEnter
 } from '@ionic/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 
-function InfiniteScrollExample() {
+const InfiniteScrollExample = memo(() => {
 
   const [data, setData] = useState([]);
   const [isInfiniteDisabled, setInfiniteDisabled] = useState(false);
@@ -93,5 +93,5 @@ function InfiniteScrollExample() {
       </IonContent>
     </IonPage>
   );
-};
+}, () => true);
 export default InfiniteScrollExample;

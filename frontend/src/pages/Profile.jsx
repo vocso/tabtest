@@ -3,13 +3,13 @@ import {IonSearchbar,  IonLabel, IonButton, IonButtons, IonCol, IonContent, IonG
  } from '@ionic/react';
  import './Profile.css';
  import { Header } from "../components/Header";
-import React,{ useEffect, useRef, useState } from 'react';
+import React,{ useEffect, useRef, useState, memo } from 'react';
 import useFetch from '../hooks/useFetch';
 
 import { useRouteMatch,useParams , useLocation} from 'react-router-dom';
 
 
-const Profile = () => {
+const Profile = memo(() => {
   const pageRef = useRef();
   const auth_token=localStorage.getItem("auth_token");
   const {get,loading}=useFetch("http://localhost:5151/api/v1/");
@@ -73,6 +73,6 @@ const Profile = () => {
       </IonContent>
     </IonPage>
   );
-};
+}, () => true);
 
 export default  Profile;

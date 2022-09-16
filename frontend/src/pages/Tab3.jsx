@@ -1,7 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { memo } from 'react';
 import './Tab3.css';
 
-const Tab3 = () => {
+const Tab3 = memo(() => {
   return (
     <IonPage>
       <IonHeader>
@@ -18,6 +19,6 @@ const Tab3 = () => {
       </IonContent>
     </IonPage>
   );
-};
+}, () => true);
 
 export default Tab3;

@@ -10,10 +10,10 @@ import './Home.css';
 import { Header } from "../components/Header";
 import { ProCard } from "../components/ProCard";
 import { ProCardImportant } from "../components/ProCardImportant";
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, memo,  useState } from 'react';
 import useFetch from '../hooks/useFetch';
 
-const Home = () => {
+const Home = memo(() => {
 
   const pageRef = useRef();
   const auth_token=localStorage.getItem("auth_token");
@@ -93,6 +93,6 @@ const Home = () => {
       </IonContent>
     </IonPage>
   );
-};
+}, () => true);
 
 export default Home;

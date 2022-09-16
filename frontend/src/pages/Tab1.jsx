@@ -12,9 +12,9 @@ import { setupIonicReact,
   IonToolbar,
   useIonViewWillEnter
 } from '@ionic/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, memo } from 'react';
 
-function Tab1() {
+const Tab1 = memo(() => {
 
   const [data, setData] = useState([]);
   const [isInfiniteDisabled, setInfiniteDisabled] = useState(false);
@@ -94,5 +94,5 @@ function Tab1() {
       </IonContent>
     </IonPage>
   );
-};
+}, () => true);
 export default Tab1;
